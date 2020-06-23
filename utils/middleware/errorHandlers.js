@@ -8,15 +8,15 @@ function withErrorStack(error, stack) {
   return error
 }
 
-function wrapErrors(err, req, res, next) {
-  if (err.isBoom) {
-    next(boom.badImplementation(err))
-  }
+function logErrors(err, req, res, next) {
+  console.log(err)
   next(err)
 }
 
-function logErrors(err, req, res, next) {
-  console.log(err)
+function wrapErrors(err, req, res, next) {
+  if (!err.isBoom) {
+    next(boom.badImplementation(err))
+  }
   next(err)
 }
 
