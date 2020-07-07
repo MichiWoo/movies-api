@@ -83,6 +83,4 @@ function moviesApi(app) {
   })
 }
 
-module.exports = {
-  moviesApi
-}
+module.exports = moviesApi
