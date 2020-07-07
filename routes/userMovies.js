@@ -1,6 +1,6 @@
 const express = require('express')
 
-const userMoviesServices = require('../services/userMovies')
+const UserMoviesServices = require('../services/userMovies')
 const validationHandler = require('../utils/middleware/validationHandler')
 
 const { movieIdSchema } = require('../utils/schemas/movies')
@@ -11,7 +11,7 @@ function userMoviesApi(app) {
   const router = express.Router()
   app.use('/api/user-movies', router)
 
-  const userMoviesService = new userMoviesServices
+  const userMoviesService = new UserMoviesServices
 
   router.get('/', validationHandler({ userId: userIdSchema }, 'query' ), async function(req, res, next) {
     const { userId } = req.query

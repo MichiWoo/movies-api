@@ -1,7 +1,7 @@
 const MongoLib = require('../lib/mongo')
 const bcrypt = require('bcrypt')
 
-class userServices {
+class UserServices {
   constructor() {
     this.collection = 'users',
     this.mongoDB = new MongoLib()
@@ -28,4 +28,4 @@ class userServices {
 
 }
 
-module.exports = userServices
+module.exports = UserServices
