@@ -17,7 +17,6 @@ const createMovieSchema = {
   description: movieDescriptionSchema.required(),
   duration: movieDurationSchema.required(),
   contentRaiting: movieContentRatingSchema.required(),
-  cover: movieSourceSchema.required(),
   source: movieSourceSchema.required(),
   tags: movieTagsSchema
 }
@@ -29,7 +28,6 @@ const updateMovieSchema = {
   description: movieDescriptionSchema,
   duration: movieDurationSchema,
   contentRaiting: movieContentRatingSchema,
-  cover: movieSourceSchema,
   source: movieSourceSchema,
   tags: movieTagsSchema
 }
