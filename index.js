@@ -1,4 +1,5 @@
 const express = require('express')
+const helmet = require('helmet')
 const app = express()
 
 const { config } = require('./config/index')
@@ -14,6 +15,9 @@ const notFoundHandler = require('./utils/middleware/notFoundHandler')
 
 // Body parse (Para intereprepeat los datos del json)
 app.use(express.json())
+
+// Helmet para la seguridad de los http
+app.use(helmet())
 
 // Routes
 authApi(app)
